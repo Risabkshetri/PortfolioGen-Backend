@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>{{name}}</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Fontawesome CDN Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <!-- Move to up button -->
+  <div class="scroll-button">
+    <a href="#home"><i class="fas fa-arrow-up"></i></a>
+  </div>
+  <!-- navgaition menu -->
+  <nav>
+    <div class="navbar">
+      <div class="logo"><a href="#">Portfolio.</a></div>
+      <ul class="menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <div class="cancel-btn">
+          <i class="fas fa-times"></i>
+        </div>
+      </ul>
+      <div class="media-icons">
+        <a href="{{socialLinks.facebook}}"><i class="fab fa-facebook-f"></i></a>
+        <a href="{{socialLinks.twitter}}"><i class="fab fa-twitter"></i></a>
+        <a href="{{socialLinks.github}}"><i class="fab fa-github"></i></a>
+      </div>
+    </div>
+    <div class="menu-btn">
+      <i class="fas fa-bars"></i>
+    </div>
+  </nav>
+
+  <!-- Home Section Start -->
+  <section class="home" id="home" style="display: flex; justify-content: space-between;">
+    <div class="home-content">
+      <div class="text">
+        <div class="text-one">Hello,</div>
+        <div class="text-two">I'm {{name}}</div>
+        <div class="text-three">{{tagline}}</div>
+        <div class="text-four">From {{location}}</div>
+      </div>
+      <div class="button">
+        <button>Hire Me</button>
+      </div>
+    </div>
+    <div class="image-container">
+      <img class="hero-img" src="https://res.cloudinary.com/deht0dsks/image/upload/v1734961263/webphoto_g0tgtd.jpg"
+        alt="">
+    </div>
+  </section>
+
+  <!-- About Section Start -->
+  <section class="about" id="about">
+    <div class="content">
+      <div class="title"><span>About Me</span></div>
+      <div class="about-details">
+        <div class="left">
+          <img src={{aboutImgUrl}} alt="about" />
+        </div>
+        <div class="right">
+          <div class="topic">{{tagline}}</div>
+          <p>
+            {{about}}
+          </p>
+          <div class="button">
+            <button>Download CV</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- My Skill Section Start -->
+  <!-- Section Tag and Other Div will same where we need to put same CSS -->
+  <section class="skills" id="skills">
+    <div class="content">
+      <div class="title"><span>My Skills</span></div>
+      <div class="skills-details">
+        <div class="text">
+          <div class="q">Skills Reflects MY Knowledge</div>
+          <p>{{aboutSkill}}</p>
+          <div class="experience">
+            <div class="num">{{yearOfExperience}}</div>
+            <div class="exp">
+              Years Of <br />
+              Experience
+            </div>
+          </div>
+        </div>
+         <div class="skills-lists">
+          {{#each skills}}
+          <div class="skills-box">
+            <div class="topic">{{this}}</div>
+          </div>
+        {{/each}}
+          </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- My Portfolio Section Start -->
+
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2>Projects</h2>
+      <div class="projects-grid">
+        {{#each projects}}
+        <div class="project-card">
+          <div class="project-content">
+            <img src="{{this.image}}" alt="Project 1" />
+            <h3>{{this.title}}</h3>
+            <p>{{this.description}}</p>
+            <div class="project-links">
+              <a href="{{this.link}}" class="project-link" target="_blank">
+                View Project <i class="fas fa-external-link-alt"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      {{/each}}
+      </div>
+    </div>
+  </section>
+
+ <!-- Contact Me section Start -->
+  <section class="contact" id="contact">
+      <div class="title"><span>Contact Me</span></div>
+      <div class="content">
+      <div class="text">
+        <div class="topic">Do you want to contact me?</div>
+        <p>Thank you for your interest in contacting me. I am always open to new opportunities and collaborations.
+          Please feel free to reach out to me for any professional inquiries or discussions. I look forward to hearing
+          from you.</p>
+        <div class="button">
+          <button>Let's Chat <span style="font-size: 24px;">👉</span></button>
+        </div>
+      </div>
+      <div class="form-container">
+        <div class="title">Get in Touch</div>
+        <form id="contactForm" action="#" method="POST">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit">Send Message</button>
+            </div>
+        </form>
+      </div>
+      </div>
+  </section>
+
+
+  <!-- Footer Section Start -->
+  <footer>
+    <footer>
+      <div class="text">
+        <p>&copy; 2024 {{name}}. All rights reserved.</p>
+      </div>
+    </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
