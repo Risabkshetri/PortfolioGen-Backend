@@ -36,7 +36,7 @@ async function main() {
 // Middleware setup 
 server.use(express.json());
 server.use(cors({
-  origin: ['http://localhost:3000', 'http://127.0.0.1:5500'],
+  origin: ['http://localhost:3000', 'https://portfolio.kshetriai.com/'],
   credentials: true
 }));
 
