@@ -23,7 +23,7 @@ const portfolioSchema = new mongoose.Schema({
     image:{type: String},
     link: { type: String, required: true }
   }],
-  cv: { type: String}
+  cv: { type: String, default: '' },
 }, {
   timestamps: true
 });
